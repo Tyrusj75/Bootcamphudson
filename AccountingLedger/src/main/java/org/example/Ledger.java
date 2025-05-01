@@ -101,3 +101,48 @@ public class Ledger {
         } while (!userInput.equals("H"));
     }
 
+    public static ArrayList<Transaction> sortLedgerByDate(ArrayList<Transaction> ledgerList) {
+        for (int i = 0; i < ledgerList.size() - 1; i++) {
+            for (int j = 0; j < ledgerList.size() - i - 1; j++) {
+                Transaction t1 = ledgerList.get(j);
+                Transaction t2 = ledgerList.get(j + 1);
+
+                if (t1.getDate().isBefore(t2.getDate()) ||
+                        (t1.getDate().isEqual(t2.getDate()) && t1.getTime().isBefore(t2.getTime()))) {
+                    ledgerList.set(j, t2);
+                    ledgerList.set(j + 1, t1);
+                }
+            }
+        }
+        return ledgerList;
+    }
+
+    public static void displayAll(ArrayList<Transaction> ledgerList) {
+        System.out.println("Displaying all transactions:");
+        for (Transaction transaction : ledgerList) {
+            System.out.printf("Date: %s | Time: %s | Description: %s | Vendor: %s | Amount: $%.2f%n",
+                    transaction.getDate(), transaction.getTime(), transaction.getDescription(), transaction.getVendor(), transaction.getAmount());
+        }
+    }
+
+    public static void displayDeposits(ArrayList<Transaction> ledgerList) {
+        System.out.println("Displaying all deposits:");
+        for (Transaction transaction : ledgerList) {
+            if (transaction.getAmount() > 0) {
+                System.out.printf("Date: %s | Time: %s | Description: %s | Vendor: %s | Amount: $%.2f%n",
+                        transaction.getDate(), transaction.getTime(), transaction.getDescription(), transaction.getVendor(), transaction.getAmount());
+            }
+        }
+    }
+
+    public static void displayPayments(ArrayList<Transaction> ledgerList) {
+        System.out.println("Displaying all payments:");
+        for (Transaction transaction : ledgerList) {
+            if (transaction.getAmount() < 0) {
+                System.out.printf("Date: %s | Time: %s | Description: %s | Vendor: %s | Amount: $%.2f%n",
+                        transaction.getDate(), transaction.getTime(), transaction.getDescription(), transaction.getVendor(), transaction.getAmount());
+            }
+        }
+    }
+}
+
