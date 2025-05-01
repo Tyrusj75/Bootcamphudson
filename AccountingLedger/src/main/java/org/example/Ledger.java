@@ -14,7 +14,7 @@ public class Ledger {
         String userInput;
 
         do {
-            System.out.println("Welcome to Founder's Credit Union! Please select an option below" +
+            System.out.println("Welcome to Tooka's Credit Union! Please select an option below" +
                     "\nD) Deposit" +
                     "\nP) Make a payment" +
                     "\nL) Ledger" +
