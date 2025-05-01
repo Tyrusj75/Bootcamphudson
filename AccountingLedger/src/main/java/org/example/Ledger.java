@@ -40,3 +40,64 @@ public class Ledger {
             }
         } while (true);
     }
+
+    public static void addDeposit() throws IOException {
+        System.out.println("Enter the description of the transaction:");
+        String description = myScanner.nextLine().trim();
+        System.out.println("Enter the vendor:");
+        String vendor = myScanner.nextLine().trim();
+        System.out.println("Enter the amount:");
+        double amount = myScanner.nextDouble();
+        myScanner.nextLine();
+
+        Transaction newTransaction = new Transaction(LocalDate.now(), LocalTime.now(), description, vendor, amount);
+        ledgerList.add(newTransaction);
+        TransactionFileManager.writeFile();
+        System.out.println("Deposit added successfully!");
+    }
+
+    public static void makePayment() throws IOException {
+        System.out.println("Enter the description of the transaction:");
+        String description = myScanner.nextLine().trim();
+        System.out.println("Enter the vendor:");
+        String vendor = myScanner.nextLine().trim();
+        System.out.println("Enter the amount:");
+        double amount = myScanner.nextDouble();
+        myScanner.nextLine();
+
+        Transaction newTransaction = new Transaction(LocalDate.now(), LocalTime.now(), description, vendor, -amount);
+        ledgerList.add(newTransaction);
+        TransactionFileManager.writeFile();
+        System.out.println("Payment added successfully!");
+    }
+
+    public static void displayLedger() throws IOException {
+        String userInput;
+
+        do {
+            System.out.println("These are your options:" +
+                    "\nA) All entries" +
+                    "\nD) View deposits" +
+                    "\nP) View payments" +
+                    "\nH) Home");
+
+            userInput = myScanner.nextLine().trim().toUpperCase();
+
+            switch (userInput) {
+                case "A":
+                    displayAll(sortLedgerByDate(ledgerList));
+                    break;
+                case "D":
+                    displayDeposits(sortLedgerByDate(ledgerList));
+                    break;
+                case "P":
+                    displayPayments(sortLedgerByDate(ledgerList));
+                    break;
+                case "H":
+                    return;
+                default:
+                    System.out.println("Invalid option! Please try again.");
+            }
+        } while (!userInput.equals("H"));
+    }
+
