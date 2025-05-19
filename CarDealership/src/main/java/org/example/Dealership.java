@@ -18,19 +18,18 @@ public class Dealership {
     }
 
     List<Vehicle> getVehiclesByPrice(double min, double max){
-
         return null ;
     }
     List<Vehicle> getVehiclesByMakeModel(String makeModel) {
         ArrayList<Vehicle> filteredVehicles = new ArrayList<>();
-
+// System.out.println(inventory);
         for (Vehicle vehicle: inventory) {
             if (vehicle.make.equalsIgnoreCase(makeModel.trim()) || vehicle.model.equalsIgnoreCase(makeModel.trim())) {
                 filteredVehicles.add(vehicle);
             }
         }
         for (Vehicle filteredVehicle: filteredVehicles) {
-            System.out.println(filteredVehicle.vin + "|" + filteredVehicle.year + "|" + filteredVehicle.make + "|" + filteredVehicle.model + "|" + filteredVehicle.vehicleType + "|" + filteredVehicle.color + "|"  + filteredVehicle.odometer + "|" + filteredVehicle.price);
+            System.out.println(filteredVehicle.vin + "|" + filteredVehicle.year + "|" + filteredVehicle.make + "|" + filteredVehicle.model + "|" + filteredVehicle.vehicleType + "|" + filteredVehicle.color + "|" + filteredVehicle.odometer + "|" + filteredVehicle.price);
         }
         return null;
     }
@@ -44,7 +43,7 @@ public class Dealership {
             }
         }
         for (Vehicle filteredVehicle: filteredVehicles) {
-            System.out.println(filteredVehicle.vin + "|" + filteredVehicle.year + "|" + filteredVehicle.make + "|" + filteredVehicle.model + "|" + filteredVehicle.vehicleType + "|" + filteredVehicle.color + "|"  + filteredVehicle.odometer + "|" + filteredVehicle.price);
+            System.out.println(filteredVehicle.vin + "|" + filteredVehicle.year + "|" + filteredVehicle.make + "|" + filteredVehicle.model + "|" + filteredVehicle.vehicleType + "|" + filteredVehicle.color + "|" + filteredVehicle.odometer + "|" + filteredVehicle.price);
         }
         return null;
     }
@@ -58,7 +57,7 @@ public class Dealership {
 
         }
         for (Vehicle filteredVehicle: filteredByColor) {
-            System.out.println(filteredVehicle.vin + "|" + filteredVehicle.year + "|" + filteredVehicle.make + "|" + filteredVehicle.model + "|" + filteredVehicle.vehicleType + "|" + filteredVehicle.color + "|"  + filteredVehicle.odometer + "|" + filteredVehicle.price);
+            System.out.println(filteredVehicle.vin + "|" + filteredVehicle.year + "|" + filteredVehicle.make + "|" + filteredVehicle.model + "|" + filteredVehicle.vehicleType + "|" + filteredVehicle.color + "|" + filteredVehicle.odometer + "|" + filteredVehicle.price);
         }
         return null;
 
@@ -74,7 +73,7 @@ public class Dealership {
 
         }
         for (Vehicle filteredVehicle: filteredByMilage) {
-            System.out.println(filteredVehicle.vin + "|" + filteredVehicle.year + "|" + filteredVehicle.make + "|" + filteredVehicle.model + "|" + filteredVehicle.vehicleType + "|" + filteredVehicle.color + "|"  + filteredVehicle.odometer + "|" + filteredVehicle.price);
+            System.out.println(filteredVehicle.vin + "|" + filteredVehicle.year + "|" + filteredVehicle.make + "|" + filteredVehicle.model + "|" + filteredVehicle.vehicleType + "|" + filteredVehicle.color + "|" + filteredVehicle.odometer + "|" + filteredVehicle.price);
         }
         return null;
 
@@ -89,7 +88,7 @@ public class Dealership {
 
         }
         for (Vehicle filteredVehicle: filteredByType) {
-            System.out.println(filteredVehicle.vin + "|" + filteredVehicle.year + "|" + filteredVehicle.make + "|" + filteredVehicle.model + "|" + filteredVehicle.vehicleType + "|" + filteredVehicle.color + "|"  + filteredVehicle.odometer + "|" + filteredVehicle.price);
+            System.out.println(filteredVehicle.vin + "|" + filteredVehicle.year + "|" + filteredVehicle.make + "|" + filteredVehicle.model + "|" + filteredVehicle.vehicleType + "|" + filteredVehicle.color + "|" + filteredVehicle.odometer + "|" + filteredVehicle.price);
         }
 
 
