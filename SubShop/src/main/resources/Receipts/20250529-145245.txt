@@ -1,0 +1,18 @@
+2025-05-29 14:52:45
+Sandwich:
+Size: 12"
+Bread Type: white
+Regular Toppings: lettuce, peppers, tomatoes
+Premium Toppings: steak, american
+Sauce: mayo
+
+Price: $8.5
+
+Drink: srpite
+Size: medium
+Price: $2.5
+
+Chips Flavor: bbq
+Price: $1.5
+
+Total Cost: $12.5
